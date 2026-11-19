@@ -1,0 +1,4 @@
+.venv/
+practica.db
+.env
+__pycache__/
