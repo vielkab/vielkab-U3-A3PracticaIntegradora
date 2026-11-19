@@ -1,6 +1,6 @@
-# API REST de práctica: SAST y SCA
+# API REST de práctica: controles DevSecOps
 
-API Flask local con fallos **intencionales** para el laboratorio: una clave fija en el código, una consulta SQL vulnerable y dependencias desactualizadas. Usa únicamente los datos ficticios incluidos; no agregues credenciales reales ni la expongas a una red pública.
+API Flask local para la práctica integradora de DevSecOps. El historial y los reportes `*-before` conservan la evidencia del escenario vulnerable; el estado actual externaliza secretos, parametriza la consulta SQL y fija dependencias auditadas. Usa únicamente los datos ficticios incluidos y no expongas la API a una red pública.
 
 ## Requisitos y ejecución
 
@@ -12,7 +12,7 @@ API Flask local con fallos **intencionales** para el laboratorio: una clave fija
    .\.venv\Scripts\Activate.ps1
    ```
 
-3. Instala las dependencias del escenario vulnerable:
+3. Instala las dependencias fijadas:
 
    ```powershell
    python -m pip install -r requirements.txt
@@ -49,12 +49,12 @@ Ejemplo de cuerpo para `POST /api/login`:
 
 ## Análisis de seguridad
 
-Desde esta carpeta puedes analizar el código y las dependencias, por ejemplo:
+Desde esta carpeta puedes repetir los análisis del pipeline:
 
 ```powershell
 python -m pip install bandit pip-audit
-bandit -r app.py -f txt
+bandit -r app.py -ll
 pip-audit -r requirements.txt
 ```
 
-La práctica consiste en registrar los hallazgos, corregirlos (consultas parametrizadas, secretos desde variables de entorno y actualización de dependencias) y volver a ejecutar los análisis para comparar los resultados. No uses los ejemplos de inyección contra servicios externos.
+GitHub Actions ejecuta Bandit (SAST) y pip-audit (SCA) en cada Pull Request dirigido a `main` y en cada `push` a `main`. La carpeta `security/` conserva los resultados antes y después de la remediación, la tabla de decisiones y los SBOM CycloneDX. No uses los ejemplos de inyección contra servicios externos.
