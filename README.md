@@ -18,7 +18,16 @@ API Flask local con fallos **intencionales** para el laboratorio: una clave fija
    python -m pip install -r requirements.txt
    ```
 
-4. Inicia la API:
+4. Crea tu archivo local de configuración y establece una clave de demostración:
+
+   ```powershell
+   Copy-Item .env.example .env
+   notepad .env
+   ```
+
+   Cambia el valor de `API_KEY` por una clave local aleatoria. El archivo `.env` está excluido de Git.
+
+5. Inicia la API:
 
    ```powershell
    python app.py
@@ -29,7 +38,7 @@ La API escucha solo en `http://127.0.0.1:5000`. Al iniciar crea `practica.db` co
 ## Endpoints
 
 - `GET /api/health` — comprueba que la API está activa.
-- `GET /api/profile` — requiere el encabezado `X-API-Key` con el valor de demostración que aparece en `app.py`.
+- `GET /api/profile` — requiere el encabezado `X-API-Key` con el valor configurado localmente en `.env` como `API_KEY`.
 - `POST /api/login` — recibe JSON con `username` y `password`; usa `admin` / `AdminDemo123!` o `estudiante` / `Practica123!` para el caso válido.
 
 Ejemplo de cuerpo para `POST /api/login`:
