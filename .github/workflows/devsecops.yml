@@ -1,0 +1,31 @@
+name: DevSecOps Build Breaker
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  security-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies and scanners
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r api_rest_practica/requirements.txt
+          pip install bandit pip-audit
+
+      - name: Static Analysis (SAST - Bandit)
+        run: bandit -r api_rest_practica -ll
+
+      - name: Dependency Audit (SCA - pip-audit)
+        run: pip-audit -r api_rest_practica/requirements.txt
