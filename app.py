@@ -1,11 +1,16 @@
-"""API de laboratorio con vulnerabilidades intencionales. Solo para uso local."""
-from flask import Flask, jsonify, request
+"""API local de práctica con claves de entorno y consultas SQL parametrizadas."""
+import hmac
+import os
 import sqlite3
 from pathlib import Path
 
+from dotenv import load_dotenv
+from flask import Flask, jsonify, request
+
+load_dotenv()
+
 app = Flask(__name__)
 DB_PATH = Path(__file__).with_name("practica.db")
-API_KEY = "API_KEY_DEMO_NO_USAR_EN_PRODUCCION"
 
 
 def init_db():
@@ -28,8 +33,9 @@ def health():
 
 @app.get("/api/profile")
 def profile():
-    # Vulnerabilidad intencional: secreto fijo en el código.
-    if request.headers.get("X-API-Key") != API_KEY:
+    api_key = os.environ.get("API_KEY")
+    provided_key = request.headers.get("X-API-Key", "")
+    if not api_key or not hmac.compare_digest(provided_key, api_key):
         return jsonify(error="No autorizado"), 401
     return jsonify(user="admin", message="Acceso de demostración")
 
@@ -40,16 +46,9 @@ def login():
     username = data.get("username", "")
     password = data.get("password", "")
 
-    # Vulnerabilidad intencional: SQL concatenado con datos del usuario.
-    query = (
-        "SELECT id, username FROM users WHERE username = '"
-        + username
-        + "' AND password = '"
-        + password
-        + "'"
-    )
+    query = "SELECT id, username FROM users WHERE username = ? AND password = ?"
     with sqlite3.connect(DB_PATH) as conn:
-        row = conn.execute(query).fetchone()
+        row = conn.execute(query, (username, password)).fetchone()
 
     if row:
         return jsonify(message="Login correcto", user={"id": row[0], "username": row[1]})
@@ -58,5 +57,5 @@ def login():
 
 if __name__ == "__main__":
     init_db()
-    # Escucha solo en localhost. No publicar esta API vulnerable en Internet.
+    # Escucha solo en localhost. No publicar esta API de demostración en Internet.
     app.run(host="127.0.0.1", port=5000, debug=False)
