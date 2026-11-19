@@ -16,13 +16,14 @@ Alcance: dependencias declaradas en `requirements.txt` antes de remediar.
 | requests 2.20.0 | CVE-2023-32681, CVE-2024-35195, CVE-2024-47081, CVE-2026-25645 | Actualizar a requests 2.34.2. | Corregido; 0 vulnerabilidades en auditoría final |
 | idna 2.7 (transitiva) | CVE-2024-3651, CVE-2026-45409 | Resolver mediante la actualización de requests; validar versión transitiva con auditoría final. | Corregido: idna 3.20; 0 vulnerabilidades |
 | urllib3 1.24.3 (transitiva) | CVE-2020-26137, CVE-2023-43804, CVE-2023-45803, CVE-2024-37891, CVE-2025-50181, CVE-2025-66418, CVE-2025-66471, CVE-2026-21441, CVE-2026-44431, CVE-2026-97689 | Resolver mediante la actualización de requests; validar versión transitiva con auditoría final. | Corregido: urllib3 2.8.0; 0 vulnerabilidades |
+| python-dotenv 1.2.4 | Sin hallazgos en la auditoría actual | Se incorpora para cargar la variable `API_KEY` desde el archivo `.env` local. | Sin vulnerabilidades conocidas en `pip-audit` |
 
 ## Evidencia
 
 - `pip-audit-before.json`: salida JSON inicial de `pip-audit`.
 - `sbom.cdx.json`: SBOM CycloneDX 1.6 del entorno de dependencias vulnerable, con 13 componentes.
-- `pip-audit-after.json`: auditoría posterior a la actualización; 12 paquetes directos/transitivos, todos con `vulns: []`.
-- `sbom-after.cdx.json`: SBOM CycloneDX con el inventario actualizado y hashes SHA-256 de cada componente.
+- `pip-audit-after.json`: auditoría posterior a la actualización; 13 paquetes directos/transitivos, todos con `vulns: []`.
+- `sbom-after.cdx.json`: SBOM CycloneDX con el inventario actualizado y hashes SHA-256 de los 13 componentes.
 
 ## Integridad del SBOM
 

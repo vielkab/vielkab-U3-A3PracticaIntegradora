@@ -1,8 +1,8 @@
 {
   "components": [
     {
-      "bom-ref": "requirements-L7",
-      "description": "requirements line 7: blinker==1.9.0",
+      "bom-ref": "requirements-L8",
+      "description": "requirements line 8: blinker==1.9.0",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -26,8 +26,8 @@
       ]
     },
     {
-      "bom-ref": "requirements-L8",
-      "description": "requirements line 8: certifi==2026.10.23",
+      "bom-ref": "requirements-L9",
+      "description": "requirements line 9: certifi==2026.10.23",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -51,8 +51,8 @@
       ]
     },
     {
-      "bom-ref": "requirements-L5",
-      "description": "requirements line 5: charset-normalizer==3.5.2",
+      "bom-ref": "requirements-L6",
+      "description": "requirements line 6: charset-normalizer==3.5.2",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -76,8 +76,8 @@
       ]
     },
     {
-      "bom-ref": "requirements-L9",
-      "description": "requirements line 9: click==8.5.1",
+      "bom-ref": "requirements-L10",
+      "description": "requirements line 10: click==8.5.1",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -151,8 +151,8 @@
       ]
     },
     {
-      "bom-ref": "requirements-L10",
-      "description": "requirements line 10: itsdangerous==2.2.0",
+      "bom-ref": "requirements-L11",
+      "description": "requirements line 11: itsdangerous==2.2.0",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -176,8 +176,8 @@
       ]
     },
     {
-      "bom-ref": "requirements-L11",
-      "description": "requirements line 11: jinja2==3.1.6",
+      "bom-ref": "requirements-L12",
+      "description": "requirements line 12: jinja2==3.1.6",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -201,8 +201,8 @@
       ]
     },
     {
-      "bom-ref": "requirements-L12",
-      "description": "requirements line 12: markupsafe==3.0.4",
+      "bom-ref": "requirements-L13",
+      "description": "requirements line 13: markupsafe==3.0.4",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -222,6 +222,26 @@
         {
           "alg": "SHA-256",
           "content": "c1bc67752d5f21013cfe430df4062441714eab79f65a6a05e01505957e9c35fe"
+        }
+      ]
+    },
+    {
+      "bom-ref": "requirements-L5",
+      "description": "Versión fijada en requirements.txt; hash SHA-256 del artefacto oficial python_dotenv-1.2.4-py3-none-any.whl publicado en PyPI.",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/60/d1/38f3a3405989a89ac18390803e70c6ad7c7760da4f9b83cbeca0c44a0c72/python_dotenv-1.2.4-py3-none-any.whl"
+        }
+      ],
+      "name": "python-dotenv",
+      "purl": "pkg:pypi/python-dotenv@1.2.4",
+      "type": "library",
+      "version": "1.2.4",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "42269a8a5b3fd54ffa6f3d84b18abed50064717576b4ecf03dc4a55d8aa04fdc"
         }
       ]
     },
@@ -251,8 +271,8 @@
       ]
     },
     {
-      "bom-ref": "requirements-L6",
-      "description": "requirements line 6: urllib3==2.8.0",
+      "bom-ref": "requirements-L7",
+      "description": "requirements line 7: urllib3==2.8.0",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -315,6 +335,9 @@
       "ref": "requirements-L12"
     },
     {
+      "ref": "requirements-L13"
+    },
+    {
       "ref": "requirements-L2"
     },
     {
@@ -340,12 +363,7 @@
     }
   ],
   "metadata": {
-    "properties": [
-      {
-        "name": "cdx:reproducible",
-        "value": "true"
-      }
-    ],
+    "timestamp": "2026-11-19T14:52:22.838188+00:00",
     "tools": {
       "components": [
         {
@@ -449,6 +467,7 @@
       ]
     }
   },
+  "serialNumber": "urn:uuid:c06a3867-cc98-473e-aeb0-4af3e14eaefe",
   "version": 1,
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
