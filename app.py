@@ -45,16 +45,11 @@ def login():
     username = data.get("username", "")
     password = data.get("password", "")
 
-    # Vulnerabilidad intencional: SQL concatenado con datos del usuario.
-    query = (
-        "SELECT id, username FROM users WHERE username = '"
-        + username
-        + "' AND password = '"
-        + password
-        + "'"
-    )
     with sqlite3.connect(DB_PATH) as conn:
-        row = conn.execute(query).fetchone()
+        row = conn.execute(
+            "SELECT id, username FROM users WHERE username = ? AND password = ?",
+            (username, password),
+        ).fetchone()
 
     if row:
         return jsonify(message="Login correcto", user={"id": row[0], "username": row[1]})
