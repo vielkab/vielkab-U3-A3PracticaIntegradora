@@ -1,4 +1,6 @@
 .venv/
 practica.db
-.env
 __pycache__/
+.venv-api/
+config.bat
+node_modules
