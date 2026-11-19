@@ -22,3 +22,7 @@ Alcance: dependencias declaradas en `requirements.txt` antes de remediar.
 - `pip-audit-before.json`: salida JSON inicial de `pip-audit`.
 - `sbom.cdx.json`: SBOM CycloneDX 1.6 del entorno de dependencias vulnerable, con 13 componentes.
 - El resultado final debe volver a ejecutar `pip-audit` y regenerar el SBOM después de actualizar las dependencias.
+
+## Integridad del SBOM
+
+Se incorporó un hash SHA-256 por componente, correspondiente a un artefacto de distribución oficial de la versión publicada en PyPI. El hash identifica ese artefacto; puede variar entre wheel y distribución fuente, y no implica que se haya actualizado o remediado el paquete. Los componentes y versiones del inventario permanecen sin cambios.

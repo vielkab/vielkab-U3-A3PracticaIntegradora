@@ -62,7 +62,13 @@
       "name": "Flask",
       "purl": "pkg:pypi/flask@2.2.2",
       "type": "library",
-      "version": "2.2.2"
+      "version": "2.2.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b9c46cc36662a7949f34b52d8ec7bb59c0d74ba08ba6cb9ce9adc1d8676d9526"
+        }
+      ]
     },
     {
       "bom-ref": "Jinja2==3.1.6",
@@ -105,7 +111,13 @@
       "name": "Jinja2",
       "purl": "pkg:pypi/jinja2@3.1.6",
       "type": "library",
-      "version": "3.1.6"
+      "version": "3.1.6",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+        }
+      ]
     },
     {
       "bom-ref": "MarkupSafe==3.0.4",
@@ -148,7 +160,13 @@
       "name": "MarkupSafe",
       "purl": "pkg:pypi/markupsafe@3.0.4",
       "type": "library",
-      "version": "3.0.4"
+      "version": "3.0.4",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
+        }
+      ]
     },
     {
       "bom-ref": "Werkzeug==2.2.2",
@@ -212,7 +230,13 @@
       "name": "Werkzeug",
       "purl": "pkg:pypi/werkzeug@2.2.2",
       "type": "library",
-      "version": "2.2.2"
+      "version": "2.2.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7ea2d48322cc7c0f8b3a215ed73eabd7b5d75d0b50e31ab006286ccff9e00b8f"
+        }
+      ]
     },
     {
       "bom-ref": "blinker==1.9.0",
@@ -245,7 +269,13 @@
       "name": "blinker",
       "purl": "pkg:pypi/blinker@1.9.0",
       "type": "library",
-      "version": "1.9.0"
+      "version": "1.9.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ba0efaa9080b619ff2f3459d1d500c57bddea4a6b424b60a91141db6fd2f08bc"
+        }
+      ]
     },
     {
       "bom-ref": "certifi==2026.10.23",
@@ -279,7 +309,13 @@
       "name": "certifi",
       "purl": "pkg:pypi/certifi@2026.10.23",
       "type": "library",
-      "version": "2026.10.23"
+      "version": "2026.10.23",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1"
+        }
+      ]
     },
     {
       "bom-ref": "chardet==3.0.4",
@@ -302,7 +338,13 @@
       "name": "chardet",
       "purl": "pkg:pypi/chardet@3.0.4",
       "type": "library",
-      "version": "3.0.4"
+      "version": "3.0.4",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"
+        }
+      ]
     },
     {
       "bom-ref": "click==8.5.1",
@@ -345,7 +387,13 @@
       "name": "click",
       "purl": "pkg:pypi/click@8.5.1",
       "type": "library",
-      "version": "8.5.1"
+      "version": "8.5.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8bb5376d2006950386f8c6427613334a2acadc5f559cb80e638d00b4df957e37"
+        }
+      ]
     },
     {
       "bom-ref": "idna==2.7",
@@ -368,7 +416,13 @@
       "name": "idna",
       "purl": "pkg:pypi/idna@2.7",
       "type": "library",
-      "version": "2.7"
+      "version": "2.7",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "156a6814fb5ac1fc6850fb002e0852d56c0c8d2531923a51032d1b70760e186e"
+        }
+      ]
     },
     {
       "bom-ref": "itsdangerous==2.2.0",
@@ -411,7 +465,13 @@
       "name": "itsdangerous",
       "purl": "pkg:pypi/itsdangerous@2.2.0",
       "type": "library",
-      "version": "2.2.0"
+      "version": "2.2.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c6242fc49e35958c8b15141343aa660db5fc54d4f13a1db01a3f5891b98700ef"
+        }
+      ]
     },
     {
       "bom-ref": "pip==26.1.1",
@@ -449,7 +509,13 @@
       "name": "pip",
       "purl": "pkg:pypi/pip@26.1.1",
       "type": "library",
-      "version": "26.1.1"
+      "version": "26.1.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "99cb1c2899893b075ff56e4ed0af55669a955b49ad7fb8d8603ecdaf4ed653fb"
+        }
+      ]
     },
     {
       "bom-ref": "requests==2.20.0",
@@ -472,7 +538,13 @@
       "name": "requests",
       "purl": "pkg:pypi/requests@2.20.0",
       "type": "library",
-      "version": "2.20.0"
+      "version": "2.20.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a84b8c9ab6239b578f22d1c21d51b696dcfe004032bb80ea832398d6909d7279"
+        }
+      ]
     },
     {
       "bom-ref": "urllib3==1.24.3",
@@ -495,7 +567,13 @@
       "name": "urllib3",
       "purl": "pkg:pypi/urllib3@1.24.3",
       "type": "library",
-      "version": "1.24.3"
+      "version": "1.24.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2393a695cd12afedd0dcb26fe5d50d0cf248e5a66f75dbd89a3d4eb333a61af4"
+        }
+      ]
     }
   ],
   "dependencies": [
@@ -562,7 +640,7 @@
     }
   ],
   "metadata": {
-    "timestamp": "2026-11-19T04:55:13.461428+00:00",
+    "timestamp": "2026-11-18T23:55:13.461428-05:00",
     "tools": {
       "components": [
         {
