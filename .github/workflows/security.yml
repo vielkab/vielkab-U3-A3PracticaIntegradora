@@ -1,0 +1,52 @@
+name: Build Breaker de seguridad
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  controles-seguridad:
+    name: Análisis SAST y SCA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v7
+
+      - name: Configurar Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias y herramientas de seguridad
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install bandit==1.9.4 pip-audit==2.10.1
+
+      - name: Análisis estático con Bandit
+        id: sast
+        continue-on-error: true
+        run: bandit -r app.py -f txt
+
+      - name: Auditoría de dependencias con pip-audit
+        id: sca
+        continue-on-error: true
+        run: pip-audit -r requirements.txt
+
+      - name: Bloquear la integración si falla un control
+        if: always()
+        env:
+          SAST_RESULT: ${{ steps.sast.outcome }}
+          SCA_RESULT: ${{ steps.sca.outcome }}
+        run: |
+          echo "Bandit result: $SAST_RESULT"
+          echo "pip-audit result: $SCA_RESULT"
+          if [ "$SAST_RESULT" != "success" ] || [ "$SCA_RESULT" != "success" ]; then
+            echo "Falló un control de seguridad; no se debe integrar este cambio."
+            exit 1
+          fi
